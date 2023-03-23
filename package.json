@@ -4,6 +4,9 @@
   "description": "Crud operations with Node, Express & MongoDB",
   "main": "index.js",
   "author": "shashika05",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
