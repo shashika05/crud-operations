@@ -1,0 +1,17 @@
+{
+  "name": "crud-operations",
+  "version": "1.0.0",
+  "description": "Crud operations with Node, Express & MongoDB",
+  "main": "index.js",
+  "author": "shashika05",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^7.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
