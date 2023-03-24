@@ -28,7 +28,28 @@ const createTodo = async (req, res) => {
   }
 };
 
+const updateTodo = async (req, res) => {
+  try {
+    const filter = { _id: req.params.todoID };
+    const update = {
+      $set: {
+        title: req.body.title,
+        description: req.body.description,
+        isCompleted: req.body.isCompleted,
+        updatedAt: Date.now(),
+      },
+    };
+    const result = await Todo.findOneAndUpdate(filter, update, { new: true });
+    res.json(result);
+    // console.log(result);
+  } catch (err) {
+    res.send(err);
+    console.log(err);
+  }
+};
+
 module.exports = {
   getTodos,
   createTodo,
+  updateTodo,
 };

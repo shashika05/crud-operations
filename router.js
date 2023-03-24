@@ -1,4 +1,4 @@
-const { getTodos, createTodo } = require("./controllers/Todo");
+const { getTodos, createTodo, updateTodo } = require("./controllers/Todo");
 
 const router = require("express").Router();
 
@@ -9,5 +9,7 @@ router.get("/", (req, res) => {
 router.get("/todos", getTodos);
 
 router.post("/todos", createTodo);
+
+router.put("/todos/:todoID", updateTodo);
 
 module.exports = router;
