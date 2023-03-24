@@ -1,7 +1,14 @@
 const Todo = require("../model/Todo");
 
-const getTodos = (req, res) => {
-  res.send("I am the get todos route");
+const getTodos = async (req, res) => {
+  console.log(req.body);
+  try {
+    const data = await Todo.find();
+    res.send(data);
+  } catch (err) {
+    res.send(err);
+    console.log(err);
+  }
 };
 
 const createTodo = async (req, res) => {
