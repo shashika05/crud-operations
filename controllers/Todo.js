@@ -1,7 +1,6 @@
 const Todo = require("../model/Todo");
 
 const getTodos = async (req, res) => {
-  console.log(req.body);
   try {
     const data = await Todo.find();
     res.send(data);
@@ -12,13 +11,12 @@ const getTodos = async (req, res) => {
 };
 
 const createTodo = async (req, res) => {
-  const todo = new Todo({
-    title: req.body.title,
-    description: req.body.description,
-    isCompleted: req.body.isCompleted,
-  });
-
   try {
+    const todo = new Todo({
+      title: req.body.title,
+      description: req.body.description,
+      isCompleted: req.body.isCompleted,
+    });
     const result = await todo.save();
     res.send(result);
     // console.log(result);
@@ -48,8 +46,22 @@ const updateTodo = async (req, res) => {
   }
 };
 
+const deleteTodo = async (req, res) => {
+  // try {
+  //   const del = await Todo.deleteOne({ _id: req.params.todoID });
+  //   res.send(del);
+  // } catch (err) {
+  //   res.send(err);
+  //   console.log(err);
+  // }
+  await Todo.deleteOne({ _id: req.params.todoID })
+    .then(() => res.json({ message: "Todo Deleted" }))
+    .catch((err) => res.send(err));
+};
+
 module.exports = {
   getTodos,
   createTodo,
   updateTodo,
+  deleteTodo,
 };
