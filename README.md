@@ -51,8 +51,7 @@ yarn start
 ```
 
 ## Contribute
-Feel free to help out as I may have other work/life commitments. See [CONTRIBUTING.md](CONTRIBUTING.md).
-
+Feel free to help out as I may have other work/life commitments.
 ## To Do
 
 - [x] Create
